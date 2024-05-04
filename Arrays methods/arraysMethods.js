@@ -41,3 +41,7 @@ let arr3 = [9, 10, 11, 12];
 console.log(arr1.concat(arr2));
 console.log(arr1.concat(arr2, arr3));
 
+//fill => from nth index to nth index the value will be filled. it'll basically replace the nth index and fill it with the value you're assigning.
+let arr4 = [1,2,3,4,5];
+arr4.fill("blah", "blah2", 2, 4);
+console.log(arr4);
