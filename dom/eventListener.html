@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: #adadad;
+        }
+        </style>
+</head>
+<body onload="load()">
+    <h1>event listner</h1>
+    <p id="js">double click anywhere</p>
+    <p id="on">loading</p>
+    
+    <script>
+        /*event listner types =>
+        click ^
+        dblclick ^
+        mouseenter ^
+        mouseleave ^
+        mouseover ^
+        input x
+        keydown ^
+        keyup ^
+        keypress ^
+        onload ^
+        */
+
+        //click
+        document.addEventListener("click", mouse);
+        function mouse() {
+            document.getElementById("js").innerText = "clicked once";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //dblclick
+        document.addEventListener("dblclick", mouse1);
+        function mouse1() {
+            document.getElementById("js").innerText = "clicked twice";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //mouseenter
+        document.addEventListener("mouseenter", mouse2);
+        function mouse2(){
+            document.getElementById("js").innerText = "mouse entered";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //mouseenter
+        document.addEventListener("mouseleave", mouse3);
+        function mouse3(){
+            document.getElementById("js").innerText = "mouse left";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //mouseover
+        document.addEventListener("mouseover", mouse4);
+        function mouse4(){
+            document.getElementById("js").innerText = "mouse over";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //keyup
+        document.addEventListener("keyup", mouse5);
+        function mouse5(){
+            document.getElementById("js").innerText = "keyup pressed";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //keydown
+        document.addEventListener("keydown", mouse6);
+        function mouse6(){
+            document.getElementById("js").innerText = "keydown pressed";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //keypress
+        document.addEventListener("keypress", mouse7);
+        function mouse7(){
+            document.getElementById("js").innerText = "key pressed";
+            document.getElementById("js").style.color = "#000";
+        }
+
+        //onload
+        //this event is often used on body tag while loading the whole webpage
+        function load(){
+            document.getElementById("on").innerText = "Page loaded";
+            document.getElementById("on").style.color = "#000";
+        }
+    </script>
+</body>
+</html>

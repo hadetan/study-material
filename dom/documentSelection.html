@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #h1{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="maths()" id="fsjs2">Submit</button>
+    <p id="js"></p>
+    <ul></ul>
+    <script>
+        //pushing content using innerHTML
+        const list = `
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        `;
+        const ul = document.querySelector("ul");
+        ul.innerHTML = list;
+
+        //creating element from scratch.
+        let title = document.createElement("h1");
+
+        //assigning class to the h1 we just created
+        title.className = "h1";
+        title.style.fontSize = "20px";
+        title.style.color = "red";
+
+        //theres a little diffrence between innerText and textContent. while using textContent it loads the content faster since it does'nt wait to load up the appearance for a human eyes. as you can see above in the style tag i've given a color value to it, even if i comment out the "title.style.color" script it still wont be reading the style tag. until i declare it for all h1's, not use the id or class. 
+        title.textContent = "new h1 is here";
+
+        //it has'nt been printed on the web yet, we'll have to use a method called appendChild
+        document.body.appendChild(title);
+        //appenchild method is used to make new child node to an exiting parent node.
+
+        //for loop
+        for(let i = 0; i < 3; i++){
+            let paragraph = document.createElement("p");
+            paragraph.className = "para";
+            paragraph.style.color = "blue";
+            paragraph.style.fontSize = "20px";
+            paragraph.textContent = i;
+            document.body.appendChild(paragraph);
+        }
+
+        //linking a function to a button.
+        function maths(){
+            let value = prompt("20 - 30");
+            if(value == 10){
+                document.getElementById("fsjs2").style.backgroundColor = "green";
+                document.getElementById("js").innerText = "successfully redirected"
+            } else{
+                document.getElementById("fsjs2").style.backgroundColor = "red";
+                document.getElementById("js").innerText = "try again"
+            }
+        }
+    </script>
+</body>
+</html>
