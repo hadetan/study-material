@@ -79,4 +79,56 @@ console.log("skip: ",var1, var2);
 const arr2 = [1,2,3,4,5,6,7,8,9];
 let [num1, num2, ...rest] = arr2;
 console.log("picked value: ", num1, num2);
-console.log("rest value: ", rest)
+console.log("rest value: ", rest);
+
+//spread => suppose we have an array of data, and want to pass it to a function, thats where spread comes. spread "spreads" the data into small chunks and sends to the function to perform an action.
+function sumone(x, y){
+    return x + y
+}
+let var3 = [9, 4];
+console.log("spread: ", sumone(...var3))
+
+//rest => in production level, you wont know specifically how many data will a user send thats why rest operator is useful. you wont have to specify var names like "x, y" etc. its an automation.
+let nums = [1,2,3,4,5,6,7,8,9];
+
+function sum3(...args){
+    console.log("value of args is: ", args);
+    let sum = 0;
+    for(const x of args){
+        sum = sum + x;
+    }
+    return sum;
+}
+console.log(sum3(...nums))
+
+//rest and spread usage is similiar, we use tripple dot "...", but depending on how youre using it defines weather its a rest or spread. spread is used to break an array, and rest is used to make it an array.
+
+
+//eventloop => suppose we are using a setTimeOut function and set 3s timer, this function will go to the queue memory and after the timer is out it'll go to stack memory and execute.
+
+
+//async await function
+const userone = () => {
+    return "userone"
+};
+const usertwo = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("credential correct");
+        }, 3000)
+    });
+};
+const userthree = () => {
+    return "userthree"
+};
+let users = async () => {
+    let val1 = userone();
+    console.log(val1);
+
+    let val2 = await usertwo();
+    console.log(val2);
+
+    let val3 = userthree();
+    console.log(val3);
+}
+users();
