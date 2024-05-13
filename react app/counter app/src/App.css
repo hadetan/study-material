@@ -1,0 +1,16 @@
+#counter{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#button{
+  /* width: 100%; */
+}
+button{
+  width: 80px;
+  height: 40px;
+  margin-top: 20px;
+}
