@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    height: 100vh;
+    background-color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80vw;
+    aspect-ratio: 16/9;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-color: #dadada;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    user-select: none;
+}
+
+.left-btn {
+    left: 50px;
+}
+
+.right-btn {
+    right: 0px;
+}
+
+.flex-container {
+    display: flex;
+    height: 100%;
+    background-color: red;
+    transition: all 0.7s ease-in-out;
+}
+
+.img-style {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
