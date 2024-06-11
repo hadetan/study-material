@@ -12,6 +12,7 @@ let n = images.length;
 const flexContainer = document.getElementById("flex-container");
 const leftButton = document.getElementById("left-btn");
 const rightButton = document.getElementById("right-btn");
+const carouselNav = document.getElementById("carousel-nav")
 
 const containerWidth = 80;
 const flexContainerWidth = n*containerWidth;
@@ -20,30 +21,46 @@ flexContainer.style.width = flexContainerWidth
 for(i = 0; i < n; i++) {
     const newImg = document.createElement("img");
     newImg.src = images[i];
-    newImg.classList.add("img-style")
-    flexContainer.appendChild(newImg)
+    newImg.classList.add("img-style");
+    flexContainer.appendChild(newImg);
+
+    const dotDiv = document.createElement("div");
+    dotDiv.classList.add("carousel-dots");
+    carouselNav.appendChild(dotDiv);
+    dotDiv.addEventListener("click", (event) => {
+        const index = [...carouselNav.children].indexOf(event.target);
+        // curPosition = index;
+        showImg(index);
+    })
 }
 
 let curPosition = 0;
+showImg(0);
+
 leftButton.addEventListener("click", () => {
     if(curPosition > 0) {
-        curPosition--;
+        showImg(curPosition - 1);
         } else {
-            curPosition = n-1
+            showImg(n - 1);
     }
-        showImg();
 })
 
 rightButton.addEventListener("click", () => {
     if(curPosition < n-1) {
-        curPosition++;
+        showImg(curPosition + 1);
     } else {
-        curPosition = 0
+        showImg(0);
     }
-    showImg();
 })
 
-function showImg() {
+function showImg(position) {
+    const prevDot = carouselNav.children[curPosition];
+    prevDot.classList.remove("active");
+    curPosition = position;
+
+    const curDot = carouselNav.children[curPosition];
+    curDot.classList.add("active");
+
     const translateX = -curPosition * containerWidth;
     flexContainer.style.transform = `translate(${translateX}vw)`
 }
