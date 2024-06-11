@@ -37,6 +37,14 @@ for(i = 0; i < n; i++) {
 let curPosition = 0;
 showImg(0);
 
+setInterval(() => {
+    if(curPosition < n-1) {
+        showImg(curPosition + 1);
+    } else {
+        showImg(0);
+    }
+}, 3000);
+
 leftButton.addEventListener("click", () => {
     if(curPosition > 0) {
         showImg(curPosition - 1);
