@@ -3,7 +3,7 @@ import React from 'react'
 function Child2(props) {
   return (
     <>
-      <p>Inside child 2: {props.countFromParent}</p>
+      <p>Child 2 count: {props.parentCount}</p>
     </>
   )
 }

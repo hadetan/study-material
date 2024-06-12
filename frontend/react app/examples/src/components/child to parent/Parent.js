@@ -4,17 +4,17 @@ import Child2 from './Child2';
 
 function Parent() {
 
-    const [countInParent, setCountInParent] = useState(0);
+    const [parentCount, setParentCount] = useState(0);
 
-    function updateCountInParent(count) {
-        setCountInParent(count);
+    const updateParentCount = (count) => {
+        setParentCount(count);
     }
 
   return (
     <>
-        <p>Inside parent: {countInParent}</p>
-        <Child1 onCountUpdate={updateCountInParent}/>
-        <Child2 countFromParent={countInParent}/>
+        <p>Inside Parent: {parentCount}</p>
+        <Child1 updateParentCount={updateParentCount}/>
+        <Child2 parentCount={parentCount} />
     </>
   )
 }

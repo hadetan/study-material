@@ -2,17 +2,23 @@ import React, { useState } from 'react'
 
 function Child1(props) {
   
-  const [countInChild1, setCountInChild] = useState(0);
-  
-  function updateCountInChild1() {
-    setCountInChild(countInChild1 + 1);
-    props.onCountUpdate(countInChild1 + 1)
+  const [child1Count, setChild1Count] = useState(0);
+
+  const updateChildCount = () => {
+    setChild1Count(child1Count + 1);
+    props.updateParentCount(child1Count + 1);
+  }
+
+  const decrementCounts = () => {
+    setChild1Count(child1Count - 1);
+    props.updateParentCount(child1Count - 1)
   }
 
   return (
     <>
-      <p>Inside child 1: {countInChild1}</p>
-      <button onClick={updateCountInChild1}>increment</button>
+      <p>Child Count: {child1Count}</p>
+      <button onClick={updateChildCount}>+</button>
+      <button onClick={decrementCounts}>-</button>
     </>
   )
 }

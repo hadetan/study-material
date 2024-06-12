@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SingleNote({note}) {
+function SingleNote(props) {
   return (
     <>
-        {note}
+        {props.note}
     </>
   )
 }
