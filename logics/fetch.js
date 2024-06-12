@@ -12,6 +12,7 @@ async function fetchData() {
         console.log(err)
     }
 }
+fetchData();
 
 function loadData(data) {
     const title = document.getElementById("title");
@@ -19,5 +20,3 @@ function loadData(data) {
     title.innerHTML = data.brand
     img.src = data.thumbnail
 }
-
-fetchData();
