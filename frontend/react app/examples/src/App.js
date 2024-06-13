@@ -1,4 +1,5 @@
 import './App.css';
+import NewsApp from './components/News app/NewsApp';
 import User from './components/User Details/User';
 import Parent from './components/child to parent/Parent';
 import Counter from './components/counter/Counter';
@@ -14,13 +15,15 @@ function App() {
       {/* <Note />
       <Parent />
       <Counter />
-      <Login />
-      <User /> */}
+      <Login /> */}
+      <User />
 
       {/* <UserForm />
       <Render /> */}
 
-      <Hook />
+      {/* <Hook /> */}
+
+      {/* <NewsApp /> */}
     </>
   );
 }

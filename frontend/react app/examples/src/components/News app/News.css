@@ -1,0 +1,37 @@
+img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.news-card {
+    padding: 20px;
+    border: 1px solid #dadada;
+    box-shadow: 5px 8px 10px 2px #33333375;
+    text-align: center;
+    word-wrap: break-word;
+    grid-template-columns: repeat(3, 30%);
+}
+
+#read {
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #2f4d;
+    cursor: pointer;
+}
+
+#read:hover {
+    background-color: #d4f2;
+}

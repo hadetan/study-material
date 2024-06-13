@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function User() {
 
-    const [user, setUser] = useState({name: "", age: ""})
+    const [user, setUser] = useState({name: "", age: ""});
 
     const handleName = (event) => {
         setUser({...user, name: event.target.value});
@@ -18,7 +18,7 @@ function User() {
         <input type="number" value={user.age} onChange={handleAge} placeholder='Enter age' />
         <p>Name: {user.name}, Age: {user.age}</p>
     </div>
-  )
+  );
 }
 
-export default User
+export default User;
