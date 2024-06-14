@@ -16,14 +16,14 @@ function App() {
       <Parent />
       <Counter />
       <Login /> */}
-      <User />
+      {/* <User /> */}
 
       {/* <UserForm />
       <Render /> */}
 
       {/* <Hook /> */}
 
-      {/* <NewsApp /> */}
+      <NewsApp />
     </>
   );
 }
