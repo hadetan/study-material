@@ -22,17 +22,19 @@ function App() {
     <Route path='/' element={<Home />} />
     <Route path='/about' element={<About />} />
     <Route path='/login' element={<Login />} />
+
     <Route path='/pricing' element={<Pricing />} >
-    <Route path='free' element={<FreePricing />} />
-    <Route path='premium' element={<PremiumPricing />} />
-    <Route path='freemium' element={<Freemium />} />
+      <Route path='free' element={<FreePricing />} />
+      <Route path='premium' element={<PremiumPricing />} />
+      <Route path='freemium' element={<Freemium />} />
+      
     </Route>
     <Route path='*' element={<NotFound />} />
     <Route path='/user/:userId' element={<Profile />}/>
 
     <Route element={<ProtectedRoute />}>
       <Route path='/prime' element={<ForPremiumUser />} />
-    </Route>
+      </Route>
     </Routes>
     
     
