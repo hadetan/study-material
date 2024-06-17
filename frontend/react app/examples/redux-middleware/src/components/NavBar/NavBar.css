@@ -1,0 +1,29 @@
+:root {
+    --aqua: #7fbfd4;
+}
+
+nav {
+    width: 100%;
+    background-color: #007a7a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    box-shadow: 0px 0px 10px black;
+    color: var(--aqua);
+    margin-bottom: 10px;
+}
+
+.right {
+    width: 60%;
+    display: flex;
+    justify-content: end;
+    margin-left: 10px;
+}
+
+.cart-layout {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.5rem;
+}

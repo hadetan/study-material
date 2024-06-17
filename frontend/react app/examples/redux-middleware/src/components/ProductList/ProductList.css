@@ -1,0 +1,21 @@
+.productList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 20px;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.theme {
+    color: #007a7a;
+}
+
+.red {
+    color: #ff5656;
+}
