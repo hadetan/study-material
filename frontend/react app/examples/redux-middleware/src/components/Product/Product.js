@@ -6,8 +6,8 @@ import { addToCart, removeFromCart } from '../../redux/slices/CartSlice';
 function Product({ product }) {
     const dispatch = useDispatch();
 
-    const cart = useSelector(state => state.CartReducer.cart);
-    const curItem = cart.find(item => item.id === product.id);
+    const cart = useSelector((state) => state.CartReducer.cart);
+    const curItem = cart.find((item) => item.id === product.id);
     const curQuantity = curItem ? curItem.quantity : 0;
 
     return (

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../../redux/slices/ProductSlice';
@@ -14,15 +13,8 @@ function ProductList() {
     const error = useSelector((state) => state.ProductReducer.error);
 
     useEffect(() => {
-        // fetchData();
         dispatch(fetchData());
     }, []);
-
-    // const fetchData = async () => {
-    //     const { data } = await axios.get('https://fakestoreapi.com/products');
-    //     console.log(data);
-    //     dispatch(loadProducts(data));
-    // };
 
     if (status === 'loading') {
         return (

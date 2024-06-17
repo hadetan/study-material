@@ -4,11 +4,10 @@ import './NavBar.css';
 import { useSelector } from 'react-redux';
 
 function NavBar() {
-
-    const cart = useSelector(state => state.CartReducer.cart);
+    const cart = useSelector((state) => state.CartReducer.cart);
 
     let count = 0;
-    cart.forEach(item => count += item.quantity);
+    cart.forEach((item) => (count += item.quantity));
 
     return (
         <nav>
