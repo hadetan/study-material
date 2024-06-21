@@ -1,38 +1,21 @@
+const dotenv = require('dotenv');
 const express = require('express');
+const v1 = require('./routes/v1/');
+
+dotenv.config({
+    path: './.env',
+});
 
 const app = express();
 
-app.use(express.json());
-
-// Data will be coming from database
-const user = [
-    {
-        name: 'Aquib',
-        age: 23,
-    },
-    {
-        name: 'User 2',
-        age: 19,
-    },
-];
-
-app.get('/user', (req, res) => {
-    // res.send({
-    //     name: 'Aquib',
-    //     age: 23,
-    // });
-    res.status(200).json({
-        success: true,
-        message: 'users were found',
-        user,
-    });
+app.use((req, res, next) => {
+    console.log(req.method, req.url, new Date().toTimeString());
+    next();
 });
 
-app.post('/user', (req, res) => {
-    console.log(req.body);
-})
+app.use('/v1', v1);
 
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`listening on port: ${PORT}`);
